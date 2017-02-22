@@ -21,8 +21,12 @@ void main()
 {
 vec3 eyeToPoint = normalize(fragPos - cameraPos);
 vec3 reflect = reflect(eyeToPoint, fragNormal);
-//color = texture(material.texture_diffuse1, fragUV);
-color = texture(cubemap, reflect);
-//color = vec4(reflect, 1);
+vec3 tangent = eyeToPoint - dot(eyeToPoint, fragNormal) * fragNormal;
+vec3 refract = eyeToPoint - tangent + tangent * 0.7;
+
+//color = texture(cubemap, reflect);
+color = texture(cubemap, refract);
 }
+
+
 

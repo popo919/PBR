@@ -26,6 +26,7 @@ vec3 refract = eyeToPoint - tangent + tangent * 0.7;
 
 //color = texture(cubemap, reflect);
 color = texture(cubemap, refract);
+color = pow(color, vec4(1.0)/2.2);
 }
 
 

@@ -4,6 +4,8 @@
 #include <FreeImage.h>
 using namespace std;
 
+extern int a;
+
 // Function prototypes
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -476,4 +478,5 @@ void do_movement()
 
 	if (keys[KEY_A])
 		eye -= right * speed;
+
 }
